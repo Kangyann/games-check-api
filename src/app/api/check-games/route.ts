@@ -1,10 +1,23 @@
+/** 
+ * @type {string[]} - ListGameType
+ * @function Validation
+ * @interface /interface/validation.interface
+ */
 import { ListGamesType } from "@/data/list-games";
 import Validation from "@/lib/validation";
 import { NextResponse } from "next/server";
 import { ValidationResponse } from '../../../interfaces/validation.interface';
-export async function POST(request: Request) {
-    const params: string | null = new URL(request.url).searchParams.get("type") ?? null
 
+/**
+ * @function POST
+ * @constant
+ * @param {Request} request
+ * @type {string | null | Record<string,any> | undefined | ValidationResponse}
+ * @returns {Promise<NextResponse>}
+ */
+
+export async function POST(request: Request): Promise<NextResponse> {
+    const params: string | null = new URL(request.url).searchParams.get("type") ?? null
 
     if (!params) {
         return NextResponse.json(
@@ -14,7 +27,7 @@ export async function POST(request: Request) {
             },
             { status: 400 })
     }
-    
+
     const data: Record<string, any> = await request.json()
     const type: string | undefined = ListGamesType.find((x: string) => x === params) ?? undefined
 
@@ -28,6 +41,7 @@ export async function POST(request: Request) {
             { status: 400 }
         )
     }
+    
     const isValid: ValidationResponse | null = await Validation({ name: type, data })
 
     if (isValid?.status !== 200) {
@@ -36,6 +50,5 @@ export async function POST(request: Request) {
             "message": isValid?.message,
         })
     }
-
     return NextResponse.json({ ...isValid })
 }

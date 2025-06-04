@@ -1,8 +1,10 @@
 /**
- * Variable ListGamesType adalah array string berisi daftar jenis game yang tersedia.
- * Data type: string[]
+ * @constant
+ * @exports ListGamesType
+ * @type {string[]}
  */
 
 export const ListGamesType: string[] = [
     "mobile-legends",
+    "free-fire"
 ]

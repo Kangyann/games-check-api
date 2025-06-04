@@ -1,8 +1,27 @@
-import { ApiFetch } from './api';
-import { MobileLegendsParams, MobileLegendsResponse, MobileLengedsConfirm } from '../interfaces/mobile-legends.interface';
+/**
+ * @function ApiFetch;
+ * @interface /interfaces/mobile-legends.interface
+ */
 
-export const CheckGames = {
-    async MobileLegends({ userId, zoneId }: MobileLegendsParams): Promise<MobileLegendsResponse> {
+import { ApiFetch } from './api';
+import { MobileLegendsParams, MobileLegendsResponse, MobileLegendsConfirm } from '../interfaces/mobile-legends.interface';
+
+/**
+ * @class CheckGames
+ */
+
+export default class CheckGames {
+
+    /**
+     * @function isMobileLegends
+     * @constant
+     * @type {Record<string,any> | MobileLegendsConfirm}
+     * @param {MobileLegendsParams} params - Parameter Request 
+     * @returns {Promise<MobileLegendsResponse>}
+     */
+
+    static async isMobileLegends({ userId, zoneId }: MobileLegendsParams): Promise<MobileLegendsResponse> {
+
         const data: Record<string, any> = await ApiFetch({
             data: {
                 "user.userId": `${userId}`,
@@ -14,20 +33,24 @@ export const CheckGames = {
                 shopLang: "id_ID"
             }
         })
-        const { success, confirmationFields } = data as MobileLengedsConfirm
+
+        const { success, confirmationFields } = data as MobileLegendsConfirm
+
         if (!success) {
             return {
                 status: 500,
-                message: "500 - [MOBILE-LEGENDS] : Failed. Re-check again for params {userId} or {zoneId}"
+                message: "500 - [MOBILE-LEGENDS] : No user found with that {userId} or {zoneId}."
             }
         }
+
         return {
             status: 200,
-            message: "200 - [MOBILE-LEGENDS] : Successfully. ",
+            message: "200 - [MOBILE-LEGENDS] : Data successfully retrieved ",
             data: {
                 username: confirmationFields.username,
                 country: confirmationFields.country
             }
         }
     }
+    
 }
