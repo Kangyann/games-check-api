@@ -1,0 +1,34 @@
+{
+  "title": "NUV GAMES API",
+  "contact-us": {
+    "to": "https://wa.me/6283829055059?text=",
+    "title": "Contact Us"
+  },
+  "sidebar-link": [
+    {
+      "title": "Getting Started",
+      "to": "/docs/getting-started",
+      "alt": "getting-started"
+    },
+    {
+      "title": "Request",
+      "alt": "request",
+      "data": [
+        {
+          "type": "[ GET ]",
+          "text": "List Games",
+          "color": "indigo-500",
+          "alt": "list-games",
+          "to": "/docs/list-games"
+        },
+        {
+          "type": "[ POST ]",
+          "text": "Check User Game",
+          "color": "yellow-500",
+          "alt": "check-user-game",
+          "to": "/docs/check-games"
+        }
+      ]
+    }
+  ]
+}
