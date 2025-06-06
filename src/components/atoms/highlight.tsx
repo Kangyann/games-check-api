@@ -1,4 +1,4 @@
-export default function HightLightAtoms({ children, type, title }: Readonly<{ children: React.ReactNode, type: string, title: string }>) {
+export default function HightLightAtom({ children, type, title }: Readonly<{ children: React.ReactNode, type: string, title: string }>) {
     return (
         <>
             <div className="mb-3">
@@ -10,7 +10,7 @@ export default function HightLightAtoms({ children, type, title }: Readonly<{ ch
                             Copy
                         </small>
                     </div>
-                    <div className="p-3">
+                    <div className="p-3 overflow-x-auto max-w-full">
                         {children}
                     </div>
                 </div>
