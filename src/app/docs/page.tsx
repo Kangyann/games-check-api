@@ -1,5 +1,5 @@
 "use client"
-import { useEffect  } from "react";
+import { useEffect } from "react";
 import { useOnThisPage } from "@/context/OnThisPage";
 import MainDocsComponent from "@/components/organisms/docs/main"
 import HightLightAtoms from '@/components/atoms/highlight';
@@ -12,7 +12,7 @@ export default function Docs() {
     useEffect(() => {
         setItems([
             { id: 'getting-started', label: 'Introduction' },
-            { id: 'what-you-can-do', label: 'How to Use' },
+            { id: 'what-you-can-do', label: 'What Is This Api ?' },
             { id: 'using-the-ex', label: 'Using The Examples' },
             { id: 'notes', label: 'Notes' },
         ])
@@ -21,10 +21,13 @@ export default function Docs() {
         <>
             {data && data.map((value, index) => (
                 <MainDocsComponent title={value.title} key={`${value.alt}-${index}`} id={value.id}>
-                    {value.other && value.other.map((items, index) => (
-                        <li key={`${items}-${index}`}>{items}</li>
-
-                    ))}
+                    {value.other && (
+                        <ul className="list-disc">
+                            {value.other.map((items, index) => (
+                                <li key={`${items}-${index}`}>{items}</li>
+                            ))}
+                        </ul>
+                    )}
                     {!value.other && <p>{value.desc}</p>}
                     {value.dataWithCode && value.dataWithCode.map((items, index) => (
                         <HightLightAtoms type={items.type} title={items.title} key={`${items.alt}-${index}`}>
