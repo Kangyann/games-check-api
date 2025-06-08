@@ -25,7 +25,7 @@ export default function Docs() {
                         <li key={`${items}-${index}`}>{items}</li>
 
                     ))}
-                    {!value.other && <p key={`${value.alt}-index`}>{value.desc}</p>}
+                    {!value.other && <p>{value.desc}</p>}
                     {value.dataWithCode && value.dataWithCode.map((items, index) => (
                         <HightLightAtoms type={items.type} title={items.title} key={`${items.alt}-${index}`}>
                             {items.code && <code>{items.code}</code>}
