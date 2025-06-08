@@ -23,10 +23,10 @@
         },
         {
           "type": "[ POST ]",
-          "text": "Check User Game",
+          "text": "Check Games",
           "color": "yellow-500",
-          "alt": "check-user-game",
-          "to": "/docs/check-user-game"
+          "alt": "check-games",
+          "to": "/docs/check-games"
         }
       ]
     }
