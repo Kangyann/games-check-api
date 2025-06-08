@@ -3,8 +3,8 @@ export const DocscLayoutClient = () => {
  const { items } = useOnThisPage()
 
   return (
-    <div>
-      <h3 className="font-semibold">On This Page</h3>
+    <div className="sticky top-2 ">
+      <h3 className="font-semibold text-xs">On This Page</h3>
       <ul className="space-y-1 mt-2 text-sm">
         {items.map((item) => (
           <li key={item.id}>
