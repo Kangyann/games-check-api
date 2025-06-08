@@ -20,7 +20,7 @@ export default function Docs() {
     return (
         <>
             {data && data.map((value, index) => (
-                <MainDocsComponent title={value.title} key={`${value.alt}-${index}`}>
+                <MainDocsComponent title={value.title} key={`${value.alt}-${index}`} id={value.id}>
                     {value.other && value.other.map((items, index) => (
                         <li key={`${items}-${index}`}>{items}</li>
 
