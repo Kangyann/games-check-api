@@ -2,16 +2,16 @@
   "data": [
     {
       "title": "Endpoint: /api/list-games",
-      "desc": "The <i className='bg-[rgb(0,0,0,.075)]  p-1 px-2 rounded text-xs font-semibold'>/api/list-games</i> endpoint allows you to retrieve a list of games from the Games Checker API. It’s a public endpoint, meaning you can access it <b>without an API key</b> — perfect for quick testing or public applications.",
+      "desc": "The <i className='bg-[rgb(0,0,0,.075)]  p-1 px-2 rounded text-xs font-semibold'>/api/list-games</i> endpoint allows you to retrieve a list of games to use on this Games Api Server. Please note that this API is unauthorised and is free to use by the public, meaning you can access it <b>without an API key</b> — perfect for quick testing or public applications.",
       "html": true
     },
     {
       "title": "What is api list-games?",
-      "desc": "The list-games feature is used to fetch a collection of games, optionally filtered by parameters like title, platform, or region. This endpoint is designed for:",
+      "desc": "The feature of this list-games api is used to retrieve a collection or list of game data that will be used in the GAMES API later. This api is designed to:",
       "other": [
-        "Displaying game catalogs",
-        "Creating search/autocomplete features",
-        "Browsing games by category or console"
+        "Display all types of games or games available.",
+        "Provide trials or testing for public use.",
+        "Can be used for original projects connected to this server."
       ]
     }
   ],
@@ -24,7 +24,7 @@
     },
     {
       "title": "🧪 Example Fetch",
-      "type": "js",
+      "type": "javascript",
       "highlight_title": "Fetch Request :",
       "pre": "fetch('https://nuv-games-api.vercel.app/api/list-games')\n .then(res => res.json())\n .then(data => console.log(data))\n .catch(err => console.error('Error fetching games:', err));`"
     },

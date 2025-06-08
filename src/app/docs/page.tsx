@@ -1,6 +1,5 @@
 "use client"
 import { useEffect  } from "react";
-
 import { useOnThisPage } from "@/context/OnThisPage";
 import MainDocsComponent from "@/components/organisms/docs/main"
 import HightLightAtoms from '@/components/atoms/highlight';

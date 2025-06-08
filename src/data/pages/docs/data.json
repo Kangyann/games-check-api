@@ -7,7 +7,7 @@
   "sidebar-link": [
     {
       "title": "Getting Started",
-      "to": "/docs/getting-started",
+      "to": "/docs",
       "alt": "getting-started"
     },
     {
@@ -26,9 +26,14 @@
           "text": "Check User Game",
           "color": "yellow-500",
           "alt": "check-user-game",
-          "to": "/docs/check-games"
+          "to": "/docs/check-user-game"
         }
       ]
     }
-  ]
+  ],
+  "footer": {
+    "desc": "2025 &copy; Made With ♡ ",
+    "author": "kangyann.dev",
+    "to": "https://kangyann.dev/"
+  }
 }

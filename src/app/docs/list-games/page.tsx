@@ -18,7 +18,7 @@ import datajson from "@/data/pages/docs/list-games.json"
 export default function DocsListGames(): React.ReactNode {
 
     const { data, dataWithCode } = datajson as { data: Record<string, any>[], dataWithCode: Record<string, any>[] }
-    
+
     return (<>
         {data.map((value: Record<string, any>, index: number): React.ReactNode => (
             <MainDocsComponent title={value.title} key={`list-games-${index}`}>
@@ -27,11 +27,11 @@ export default function DocsListGames(): React.ReactNode {
                 )}
                 {!value.html && <p>{value.desc}</p>}
                 {value.other && (
-                    <ul className="space-y-1.5 ms-3">
+                    <>
                         {value.other.map((item: string, index: number) => (
                             <li key={`list-games-other-item${index}`}>{item}</li>
                         ))}
-                    </ul>
+                    </>
                 )}
             </MainDocsComponent>
         ))}
@@ -39,7 +39,7 @@ export default function DocsListGames(): React.ReactNode {
             <MainDocsComponent title={value.title} key={`list-games-data-w-code-${index}`}>
                 <HightLightAtom type={value.type} title={value.highlight_title}>
                     {value?.code && <code>{value.code}</code>}
-                    {value?.json && <pre>{JSON.stringify(value.json,null,2)}</pre>}
+                    {value?.json && <pre>{JSON.stringify(value.json, null, 2)}</pre>}
                     {value?.pre && <pre className="whitespace-pre-wrap">{value.pre}</pre>}
                 </HightLightAtom>
             </MainDocsComponent>
