@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "title": "Getting Started — Games Checker API",
+      "id": "getting-started",
+      "alt": "getting-started-desc",
+      "desc": [
+        "Welcome to the Games Checker API — your go-to solution for checking game availability, pricing, server status, and more across multiple platforms.",
+        "Whether you're a developer building a gaming companion app, an e-commerce store comparing prices, or just a curious gamer, our API gives you fast, reliable access to up-to-date game information.",
+        "This quick guide will help you get started with just a few simple steps."
+      ]
+    },
+    {
+      "title": "What You Can Do with the API",
+      "id": "what-you-can-do",
+      "alt": "getting-started-can-do",
+      "other": [
+        "🔍 Search Games by title, ID, or platform",
+        "💰 Compare Prices across stores and regions",
+        "✅ Check Server Status for supported games",
+        "🏷️ Filter by Genre, Platform, Region, or Release Date",
+        "📈 Get Trending or Recently Released Games"
+      ]
+    },
+    {
+      "title": "Using the examples",
+      "id": "using-the-ex",
+      "alt": "getting-started-ex",
+      "desc": "You can use any HTTP client (like a browser, Postman, or fetch) to make requests.",
+      "dataWithCode": [
+        {
+          "title": "Example: Get All List Games",
+          "alt": "getting-started-list-games-req",
+          "type": "http",
+          "code": "GET https://nuv-games-api.vercel.com/api/list-games"
+        },
+        {
+          "title": "Response :",
+          "alt": "getting-started-list-games-res",
+          "type": "json",
+          "json": {
+            "message": "200 - Data successfully retrieved",
+            "status": 200,
+            "data": [
+              {
+                "type": "mobile-legends"
+              },
+              {
+                "type": "..."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "title": "Notes",
+      "id": "notes",
+      "alt": "getting-started-notes",
+      "other": [
+        "This API is open to everyone — no signup, no tokens.",
+        "Data refreshed regularly",
+        "Supports JSON only",
+        "Fast & developer-friendly"
+      ]
+    }
+  ]
+}
