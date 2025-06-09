@@ -30,7 +30,11 @@ export interface MobileLegendsResponse {
  */
 export interface MobileLegendsConfirm {
     success: boolean,
-    confirmationFields: {
+    user?: {
+        userId: string,
+        zoneId: string
+    }
+    confirmationFields?: {
         username: string,
         country: string
     }
