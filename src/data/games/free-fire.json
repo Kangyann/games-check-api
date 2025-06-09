@@ -7,8 +7,7 @@
         "title": "Data",
         "type": "json",
         "json": {
-          "userId": "123456789",
-          "zoneId": "0000"
+          "userId": "123456789"
         }
       },
       "dataTable": {
@@ -19,13 +18,7 @@
             "name": "userid",
             "type": "string",
             "req": "yes",
-            "desc": "Type of games (ex: mobile-legends, free-fire)"
-          },
-          {
-            "name": "zoneid",
-            "type": "string",
-            "req": "yes",
-            "desc": "Zone / Region ID"
+            "desc": "Find your Profile ID in Profile Game."
           }
         ]
       }
@@ -49,7 +42,7 @@
       "code": {
         "title": "Request",
         "type": "javascript",
-        "pre": "fetch('https://nuv-games-api.vercel.app/api/check-games?type=mobile-legends', {\n  method: 'POST',\n  headers: {\n   'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({\n    userid: '12345678',\n    zoneid: '1234'\n  })\n })\n .then(res => res.json())\n .then(data => console.log(data))\n .catch(err => console.error('Error checking user:', err))"
+        "pre": "fetch('https://nuv-games-api.vercel.app/api/check-games?type=free-fire', {\n  method: 'POST',\n  headers: {\n   'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({\n    userid: '12345678',\n    zoneid: '1234'\n  })\n })\n .then(res => res.json())\n .then(data => console.log(data))\n .catch(err => console.error('Error checking user:', err))"
       }
     },
     {
@@ -60,9 +53,9 @@
         "type": "javascript",
         "json": {
           "status": 200,
-          "message": "200 - [MOBILE-LEGENDS] : Data successfully retrieved ",
+          "message": "200 - [FREE-FIRE] : Data successfully retrieved ",
           "data": {
-            "username": "kangyann.",
+            "username": "_KENDANG",
             "country": "Indonesia"
           }
         }

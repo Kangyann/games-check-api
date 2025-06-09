@@ -19,7 +19,7 @@
             "name": "userid",
             "type": "string",
             "req": "yes",
-            "desc": "Type of games (ex: mobile-legends, free-fire)"
+            "desc": "Find your UserID in Profile Game."
           },
           {
             "name": "zoneid",
