@@ -17,6 +17,7 @@ export default function Docs() {
             { id: 'notes', label: 'Notes' },
         ])
     }, [setItems])
+    
     return (
         <>
             {data && data.map((value, index) => (
