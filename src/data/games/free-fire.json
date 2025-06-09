@@ -1,0 +1,72 @@
+{
+  "data": [
+    {
+      "title": "Data ( JSON ) | Free Fire ",
+      "id": "example-request",
+      "code": {
+        "title": "Data",
+        "type": "json",
+        "json": {
+          "userId": "123456789",
+          "zoneId": "0000"
+        }
+      },
+      "dataTable": {
+        "caption": "Data is needed for server requirements.",
+        "column_header": ["Name", "Type", "Required ?", "Description"],
+        "column_body": [
+          {
+            "name": "userid",
+            "type": "string",
+            "req": "yes",
+            "desc": "Type of games (ex: mobile-legends, free-fire)"
+          },
+          {
+            "name": "zoneid",
+            "type": "string",
+            "req": "yes",
+            "desc": "Zone / Region ID"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Example Fetch",
+      "id": "example-fetch",
+      "desc": "Example : /api/check-games?type=mobile-legends",
+      "dataTable": {
+        "caption": "Data is needed for server requirements.",
+        "column_header": ["Name", "Type", "Required ?", "Description"],
+        "column_body": [
+          {
+            "name": "type",
+            "type": "string",
+            "req": "yes",
+            "desc": "Type of games (ex: mobile-legends, free-fire)"
+          }
+        ]
+      },
+      "code": {
+        "title": "Request",
+        "type": "javascript",
+        "pre": "fetch('https://nuv-games-api.vercel.app/api/check-games?type=mobile-legends', {\n  method: 'POST',\n  headers: {\n   'Content-Type': 'application/json'\n  },\n  body: JSON.stringify({\n    userid: '12345678',\n    zoneid: '1234'\n  })\n })\n .then(res => res.json())\n .then(data => console.log(data))\n .catch(err => console.error('Error checking user:', err))"
+      }
+    },
+    {
+      "title": "Example Response",
+      "id": "example-response",
+      "code": {
+        "title": "Response",
+        "type": "javascript",
+        "json": {
+          "status": 200,
+          "message": "200 - [MOBILE-LEGENDS] : Data successfully retrieved ",
+          "data": {
+            "username": "kangyann.",
+            "country": "Indonesia"
+          }
+        }
+      }
+    }
+  ]
+}
