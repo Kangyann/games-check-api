@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { CombinedGames } from '@/data/combined-games';
 import { ListGamesType } from '@/data/list-games';
 import { formatTitle } from '@/utils/formatTitle';
+import Link from 'next/link';
 export default function DocsCheckUserGame() {
     const { data } = datajson
     const { setItems } = useOnThisPage()
@@ -33,6 +34,7 @@ export default function DocsCheckUserGame() {
                                     <li key={`${items}-${index}`} className={`${index == 2 ? "font-semibold" : ""}`}>{items}</li>
                                 ))}
                             </ul>
+                            {value.link && (<p className="my-1">Find a type of game here.<Link href={value.link.to} className="text-indigo-500 hover:underline transition">{value.link.text}</Link></p>)}
                             <div className="flex items-center gap-1.5 my-1">
                                 <label id="type_games" htmlFor="type_games">Choose a game types : </label>
                                 <select name="type_games" id="type_games" title="Choose game type." className="border rounded w-fit px-3 py-1 border-gray-100 cursor-pointer" onChange={(e) => setCategory(e.currentTarget.value)}>
