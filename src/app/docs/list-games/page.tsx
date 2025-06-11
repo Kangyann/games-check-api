@@ -24,13 +24,7 @@ export default function DocsListGames(): React.ReactNode {
     const { data, dataWithCode } = datajson as { data: Record<string, any>[], dataWithCode: Record<string, any>[] }
 
     useEffect(() => {
-        setItems([
-            { id: 'endpoint', label: 'Endpoint' },
-            { id: 'what-is-list-games', label: 'What is this Api ?' },
-            { id: 'example-request', label: 'Example Request' },
-            { id: 'example-fetch', label: 'Example Fetch' },
-            { id: 'example-response', label: 'Example Response' },
-        ])
+        setItems(datajson.anhcor_link)
     }, [setItems])
     
     return (<>

@@ -10,14 +10,9 @@ export default function Docs() {
     const { setItems } = useOnThisPage()
 
     useEffect(() => {
-        setItems([
-            { id: 'getting-started', label: 'Introduction' },
-            { id: 'what-you-can-do', label: 'What Is This Api ?' },
-            { id: 'using-the-ex', label: 'Using The Examples' },
-            { id: 'notes', label: 'Notes' },
-        ])
+        setItems(datajson.anhcor_link)
     }, [setItems])
-    
+
     return (
         <>
             {data && data.map((value, index) => (

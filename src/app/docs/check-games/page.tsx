@@ -9,18 +9,15 @@ import { CombinedGames } from '@/data/combined-games';
 import { ListGamesType } from '@/data/list-games';
 import { formatTitle } from '@/utils/formatTitle';
 import Link from 'next/link';
+
 export default function DocsCheckUserGame() {
+
     const { data } = datajson
     const { setItems } = useOnThisPage()
     const [category, setCategory] = useState<string>("mobile-legends")
 
     useEffect(() => {
-        setItems([
-            { id: 'endpoint', label: 'Endpoint' },
-            { id: 'example-request', label: 'Example Request' },
-            { id: 'example-fetch', label: 'Example Fetch' },
-            { id: 'example-response', label: 'Example Response' },
-        ])
+        setItems(datajson.anchor_link)
     }, [setItems])
     return (
         <>
