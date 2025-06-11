@@ -17,7 +17,7 @@ export default class CheckGames {
      * @function isMobileLegends
      * @constant
      * @type {Record<string,any> | MobileLegendsConfirm}
-     * @param {MobileLegendsParams} params - Parameter Request 
+     * @param {MobileLegendsParams} params - Parameter Request {userId} {zoneId}
      * @returns {Promise<MobileLegendsResponse>}
      */
 
@@ -56,7 +56,14 @@ export default class CheckGames {
             }
         }
     }
-    // 
+
+    /**
+     * @function isFreeFire
+     * @constant
+     * @type {Record<string,any> | FreeFireConfirm}
+     * @param {FreeFireParams} params - Parameter Request {userId}
+     * @returns {Promise<FreeFireResponse>}
+     */
     static async isFreeFire({ userId }: FreeFireParams): Promise<FreeFireResponse> {
 
         const data: Record<string, any> = await ApiFetch({

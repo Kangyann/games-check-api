@@ -15,14 +15,11 @@ export default async function Validation({ name, data }: ValidationParams): Prom
 
     /**
      * @var name as "mobile-legends"
+     * @constant
+     * @returns {object | Record<string,any>}
      */
 
     if (name === "mobile-legends") {
-
-        /**
-         * @constant
-         * @returns {object}
-         */
 
         const { userId, zoneId } = data as { userId: string, zoneId: string }
 
@@ -35,6 +32,12 @@ export default async function Validation({ name, data }: ValidationParams): Prom
 
         return await CheckGames.isMobileLegends({ userId, zoneId })
     }
+
+    /**
+     * @var name as "free-fire"
+     * @constant
+     * @returns {object | Record<string,any>}
+     */
 
     if (name === "free-fire") {
         const { userId } = data as { userId: string }
