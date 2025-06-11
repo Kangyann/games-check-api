@@ -38,7 +38,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     }
     const data: Record<string, any> = await isJson(request)
     
-    if (data?.isValid) {
+    if (!data?.isValid) {
         const { isValid, ...newestResponse } = data as Partial<{ isValid: boolean, message: string, status: number }>
         return NextResponse.json(newestResponse, { status: newestResponse.status })
     }
