@@ -15,11 +15,9 @@
       "id": "what-you-can-do",
       "alt": "getting-started-can-do",
       "other": [
-        "🔍 Search Games by title, ID, or platform",
-        "💰 Compare Prices across stores and regions",
-        "✅ Check Server Status for supported games",
-        "🏷️ Filter by Genre, Platform, Region, or Release Date",
-        "📈 Get Trending or Recently Released Games"
+        "Verify user game accounts quickly and automatically.",
+        "Access public API endpoints — no API key or authentication required.",
+        "Get instant access to game data, making it ideal for developers needing a fast, simple API."
       ]
     },
     {
@@ -69,6 +67,7 @@
     { "id": "getting-started", "label": "Introduction" },
     { "id": "what-you-can-do", "label": "What Is This Api ?" },
     { "id": "using-the-ex", "label": "Using The Examples" },
-    { "id": "notes", "label": "Notes" }
+    { "id": "notes", "label": "Notes" },
+    { "id": "contribute", "label": "Contribute Github" }
   ]
 }
