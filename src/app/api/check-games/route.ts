@@ -18,6 +18,7 @@ import { ValidationResponse } from '../../../interfaces/validation.interface';
 
 export async function POST(request: Request): Promise<NextResponse> {
     const params: string | null = new URL(request.url).searchParams.get("type") ?? null
+    const contentType = request.headers.get("Content-Type") ?? ""
 
     if (!params) {
         return NextResponse.json(
@@ -28,7 +29,19 @@ export async function POST(request: Request): Promise<NextResponse> {
             { status: 400 })
     }
 
-    const data: Record<string, any> = await request.json()
+    if (!contentType || !contentType.includes("application/json")) {
+        return NextResponse.json({
+            message: "400 - Content-Type must be application/json.",
+            status: 400
+        }, { status: 400 })
+    }
+
+    const data: Record<string, any> | null = await request.json() ?? null
+    
+    if (!data) {
+        return NextResponse.json({})
+    }
+
     const type: string | undefined = ListGamesType.find((x: string) => x === params) ?? undefined
 
     if (!type) {
@@ -41,7 +54,7 @@ export async function POST(request: Request): Promise<NextResponse> {
             { status: 400 }
         )
     }
-    
+
     const isValid: ValidationResponse | null = await Validation({ name: type, data })
 
     if (isValid?.status !== 200) {
