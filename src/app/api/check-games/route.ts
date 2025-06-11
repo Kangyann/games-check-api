@@ -7,6 +7,7 @@ import { ListGamesType } from "@/data/list-games";
 import Validation from "@/lib/validation";
 import { NextResponse } from "next/server";
 import { ValidationResponse } from '../../../interfaces/validation.interface';
+import { isJson } from "@/lib/isJson";
 
 /**
  * @function POST
@@ -35,13 +36,12 @@ export async function POST(request: Request): Promise<NextResponse> {
             status: 400
         }, { status: 400 })
     }
-
-    const data: Record<string, any> | null = await request.json() ?? null
+    const data: Record<string, any> = await isJson(request)
     
-    if (!data) {
-        return NextResponse.json({})
+    if (data?.isValid) {
+        const { isValid, ...newestResponse } = data as Partial<{ isValid: boolean, message: string, status: number }>
+        return NextResponse.json(newestResponse, { status: newestResponse.status })
     }
-
     const type: string | undefined = ListGamesType.find((x: string) => x === params) ?? undefined
 
     if (!type) {
