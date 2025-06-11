@@ -14,5 +14,11 @@
         "text": "List Games"
       }
     }
+  ],
+  "anchor_link": [
+    { "id": "endpoint", "label": "Endpoint" },
+    { "id": "example-request", "label": "Example Request" },
+    { "id": "example-fetch", "label": "Example Fetch" },
+    { "id": "example-response", "label": "Example Response" }
   ]
 }

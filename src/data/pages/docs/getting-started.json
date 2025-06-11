@@ -64,5 +64,11 @@
         "Fast & developer-friendly"
       ]
     }
+  ],
+  "anhcor_link": [
+    { "id": "getting-started", "label": "Introduction" },
+    { "id": "what-you-can-do", "label": "What Is This Api ?" },
+    { "id": "using-the-ex", "label": "Using The Examples" },
+    { "id": "notes", "label": "Notes" }
   ]
 }
