@@ -17,14 +17,14 @@ export default function Docs() {
         <>
             {data && data.map((value, index) => (
                 <MainDocsComponent title={value.title} key={`${value.alt}-${index}`} id={value.id}>
+                    <p>{value.desc}</p>
                     {value.other && (
-                        <ul className="list-disc">
+                        <ul className="list-disc ms-6 space-y-1.5">
                             {value.other.map((items, index) => (
                                 <li key={`${items}-${index}`}>{items}</li>
                             ))}
                         </ul>
                     )}
-                    {!value.other && <p>{value.desc}</p>}
                     {value.dataWithCode && value.dataWithCode.map((items, index) => (
                         <HightLightAtoms type={items.type} title={items.title} key={`${items.alt}-${index}`}>
                             {items.code && <code>{items.code}</code>}
@@ -33,6 +33,12 @@ export default function Docs() {
                     ))}
                 </MainDocsComponent>
             ))}
+            <MainDocsComponent title="Contribute on Github" id="contribute">
+                <p>We welcome contributions!</p>
+                <p>If you’d like to improve the API, fix bugs, or suggest new features, feel free to open an issue or submit a pull request on our <a href="https://github.com/kangyann/games-check-api" className="text-indigo-500 hover:underline hover:text-indigo-700 transition">GitHub repository.</a></p>
+                <p>Your feedback and contributions help make this API better for everyone!</p>
+                <div className="border-s-4 border-s-gray-200 px-3 py-1.5 rounded text-indigo-500">Let’s build something great together!</div>
+            </MainDocsComponent>
         </>
     )
 }

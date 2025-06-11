@@ -8,7 +8,7 @@ export default function DocsLayout({ children }: Readonly<{ children: React.Reac
     return (
 
         <React.Fragment>
-            <div className="font-[family-name:var(--font-geist-sans)]">
+            <main className="font-[family-name:var(--font-geist-sans)]">
                 <div className="container mx-auto p-3 flex justify-between items-center">
                     <div className="flex items-center gap-3">
                         <h1 className="text-xl font-bold text-indigo-500">
@@ -41,7 +41,7 @@ export default function DocsLayout({ children }: Readonly<{ children: React.Reac
                         ))}
                     </section>
                     <OnThisPageProvider>
-                        <main className="relative flex-[3] p-3 pb-6 min-w-0">
+                        <article className="relative flex-[3] p-3 pb-6 min-w-0">
                             {children}
                             <footer className="fixed w-full left-0 bottom-0 text-sm font-[family-name:var(--font-geist-mono)] bg-white border-t border-gray-100 py-1.5">
                                 <div className="flex justify-center items-center gap-1.5">
@@ -49,13 +49,13 @@ export default function DocsLayout({ children }: Readonly<{ children: React.Reac
                                     <a href={data.footer.to}>{data.footer.author}</a>
                                 </div>
                             </footer>
-                        </main>
+                        </article>
                         <section className="flex-1 p-3 border-s border-gray-100 min-h-screen">
                             <DocscLayoutClient />
                         </section>
                     </OnThisPageProvider>
                 </div>
-            </div>
+            </main>
         </React.Fragment>
     )
 }
