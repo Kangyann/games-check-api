@@ -26,7 +26,7 @@ export default function Docs() {
                         </ul>
                     )}
                     {value.dataWithCode && value.dataWithCode.map((items, index) => (
-                        <HightLightAtoms type={items.type} title={items.title} key={`${items.alt}-${index}`}>
+                        <HightLightAtoms type={items.type} title={items.title} key={`${items.alt}-${index}`} data={items.json ?? items.code}>
                             {items.code && <code>{items.code}</code>}
                             {items.json && <pre>{JSON.stringify(items.json, null, 2)}</pre>}
                         </HightLightAtoms>

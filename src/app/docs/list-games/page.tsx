@@ -45,7 +45,7 @@ export default function DocsListGames(): React.ReactNode {
         ))}
         {dataWithCode.map((value: Record<string, any>, index: number): React.ReactNode => (
             <MainDocsComponent title={value.title} key={`list-games-data-w-code-${index}`} id={value.id}>
-                <HightLightAtom type={value.type} title={value.highlight_title}>
+                <HightLightAtom type={value.type} title={value.highlight_title} data={value.code ?? value.json ?? value.pre}>
                     {value?.code && <code>{value.code}</code>}
                     {value?.json && <pre>{JSON.stringify(value.json, null, 2)}</pre>}
                     {value?.pre && <pre className="whitespace-pre-wrap">{value.pre}</pre>}

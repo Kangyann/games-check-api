@@ -61,7 +61,7 @@ export default function DocsCheckUserGame() {
                     )}
 
                     {value.code && (
-                        <HightLightAtom type={value.code.type} title={value.code.title}>
+                        <HightLightAtom type={value.code.type} title={value.code.title} data={value.code.json ?? value.code.pre}>
                             {value.code.json && <pre>{JSON.stringify(value.code.json, null, 2)}</pre>}
                             {value.code.pre && <pre>{value.code.pre}</pre>}
                         </HightLightAtom>

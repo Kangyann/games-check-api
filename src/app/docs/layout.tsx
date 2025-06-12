@@ -6,7 +6,6 @@ import { DocscLayoutClient } from './layout-client';
 import { OnThisPageProvider } from '@/context/OnThisPage';
 export default function DocsLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
-
         <React.Fragment>
             <main className="font-[family-name:var(--font-geist-sans)]">
                 <div className="container mx-auto p-3 flex justify-between items-center">

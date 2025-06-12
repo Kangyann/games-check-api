@@ -15,6 +15,7 @@ export default class CheckGames {
 
     /**
      * @function isMobileLegends
+     * @static
      * @constant
      * @type {Record<string,any> | MobileLegendsConfirm}
      * @param {MobileLegendsParams} params - Parameter Request {userId} {zoneId}
@@ -59,6 +60,7 @@ export default class CheckGames {
 
     /**
      * @function isFreeFire
+     * @static
      * @constant
      * @type {Record<string,any> | FreeFireConfirm}
      * @param {FreeFireParams} params - Parameter Request {userId}
@@ -87,7 +89,7 @@ export default class CheckGames {
                 message: `500 - [FREE-FIRE] : No user found with userId as {${id}}.`
             }
         }
-        const { country, roles } = confirmationFields as { country: string, roles: Record<string, any>[] }
+        const { country, roles } = confirmationFields as { country: string, roles: Partial<{ role: string }>[] }
 
         const { role } = roles[0] as { role: string }
 
